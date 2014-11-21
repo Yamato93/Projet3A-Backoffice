@@ -1,10 +1,18 @@
 <?php
 
-	if(isset($_SESSION[CONNECT]) and ($_SESSION[CONNECT] != false))
+	if(isset($_POST["login"]) && isset($_POST["pwd"]))
 	{
-		include_once("../app/view/index/index.view.php");
+		
 	}
 	else
 	{
-		include_once("../app/view/login/logpage.view.php");
+		if(isset($_SESSION[CONNECT]) and ($_SESSION[CONNECT] != false))
+		{
+			include_once("../app/view/index/index.view.php");
+		}
+		else
+		{
+			include_once("../app/view/login/logpage.view.php");
+		}
+
 	}
